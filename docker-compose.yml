@@ -1,5 +1,8 @@
 version: '2.2'
 
+volumes:
+  grafana_data: {}
+
 services:
 
   node-exporter:
