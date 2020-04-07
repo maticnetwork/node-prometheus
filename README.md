@@ -2,7 +2,7 @@
 
 Monitor your Heimdall, Bor and Virtual machine node with Prometheus and Grafana
 
-## Follow below steps to set up monitoring on heimdall, Bor and Virtual machine
+## Follow below steps to set up monitoring on Heimdall and Bor
 
 **Step 1:**
 
