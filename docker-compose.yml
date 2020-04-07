@@ -25,9 +25,6 @@ services:
     image: grafana/grafana
     ports:
       - 3000:3000
-    depends_on:
-      prometheus:
-        condition: service_started
     volumes:
       - ./provisioning:/etc/grafana/provisioning
       - ./dashboards:/var/lib/grafana/dashboards
