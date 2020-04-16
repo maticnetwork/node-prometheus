@@ -2,46 +2,97 @@
 
 Monitor your Heimdall, Bor and Virtual machine node with Prometheus and Grafana
 
-## Follow below steps to set up monitoring on Heimdall and Bor
+## Follow below steps to set up monitoring for you Matic Node
+
+**Pre-Requesites**: You need to make sure that you Matic Node is setup, including Heimdall and Bor nodes. 
 
 **Step 1:**
 
-Enable prometheus flag to true on heimdall `config.toml` file.
+You will need to change `prometheus` flag to `true` in the `config.toml`. 
 
-```
-vim $HOME/.heimdalld/config.toml
+To access the config.toml here:
 
-# change prometheus flag to true
+**Linux Packages**: `sudo vi /etc/heimdall/config/config.toml`
+**Binaries**: `vi ~/.heimdalld/config/config.toml`
 
-prometheus = true
-```
+By default the prometheus flag is set to `false`.
+
+Make sure that you keep the formatting intact.
 
 **Step 2:**
 
-You need to restart the heimdall node since config change
+Once you have made the changes in the `config.toml` you will need to stop Heimdall service and restart it.
+
+To stop heimdall service:
+
+**Linux Packages**: `sudo service heimdalld stop`
+**Binaries**: `pkill heimdalld`
+
+To restart heimdall service:
+
+**Linux Packages**: `sudo service heimdalld start`
+**Binaries**: `heimdalld start`
 
 **Step 3:**
-```
-start bor with --metrics --pprof --pprofport 7071 --pprofaddr 0.0.0.0
-```
+
+You will make changes in the Bor service file. To access the `bor.service` file you can run this command:
+
+`locate bor.service`
+
+There would be multiple entries. You will need to edit the file in this system path: `/etc/systemd/system/bor.service`
+
+To edit the service file you can run the following command:
+
+`sudo nano /etc/systemd/system/bor.service`
+
+Now in this you would see `ExecStart=/bin/bash` with multiple paramaters in line to it. You will need to search for `--maxpeers 150`. Take your cursor to this paramater and then add this, `--metrics --pprof --pprofport 7071 --pprofaddr 0.0.0.0`
+
+You need to make sure that the spaces and formatting are intact.
+
+Now you will notice that your bor will stop because we made changes to the service file. You will need to stop the bor service and restart it.
+
+To Stop Bor service:
+
+**Linux Packages**: `sudo service bor stop`
+**Binaries**: `pkill bor`
+
+Note: When you stop the service of Bor you may encounter a warning asking you run `systemctl daemon-reload` to reload units.
+
+You will need to run this as `sudo systemctl daemon-reload`. Once this is successfull you can proceed with starting the Bor service.
+
+To Restart Bor service:
+
+**Linux Packages**: `sudo service bor start`
+**Binaries**: `bash start.sh <Your Ethereum wallet address>`
+
+Note: You will need to use the same Address that you used when you had initially set up your node.
 
 **Step 4:**
 
-Start both prometheus and grafana containers using following command:
+Clone the Prometheus repository to your local machine
 
-```
-docker-compose up -d
-```
+`git clone https://github.com/maticnetwork/node-prometheus.git`
+
+And then switch to the Prometheus directory.
+
+Then install Docker by running the following command:
+
+`sudo apt install docker-compose`
+
+Once Docker is installed then you run docker by running the following command to start Prometheus: `docker-compose up -d`
 
 **Step 5:**
 
-Open grafana at following URL
+Open Prometheus at following URL:
 
 ```
 http://host_ip:3000
 ```
+Note that if you're running your Node on a Cloud service then you will need to create channel on your local machine to your Cloud Machine
 
-Login to grafana dashboard and edit the datasource HTTP to url http://host_ip:9090 and save.
+You can run this command `ssh -N -L 3000:0.0.0.0:3000 ubuntu@<your ip address>`. There would not be any output for this, however you can then check in your browser and access this URL: <your ip address>:3000
+
+You should be able to login to Grafana dashboard. Else you can always use http://localhost:3000
 
 ## Grafana default login details
 
