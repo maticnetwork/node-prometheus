@@ -93,7 +93,7 @@ http://host_ip:3000
 
 **This is an optional step.**
 
-If you're running your Node on a Cloud service then you can also create a channel on your local machine to your Cloud Machine
+If you're running your Node on a Cloud service then you can also create a proxy tunnel on your local machine to your Cloud Machine
 
 You can run this command `ssh -N -L 3000:0.0.0.0:3000 ubuntu@<your ip address>`. There would not be any output for this, however you can then check in your browser and access this URL: <your ip address>:3000
 
