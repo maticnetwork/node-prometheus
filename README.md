@@ -89,7 +89,7 @@ Open Grafana at following URL:
 http://host_ip:3000
 ```
 
-**Creating a Channel**
+**Creating a Proxy Tunnel**
 
 **This is an optional step.**
 
