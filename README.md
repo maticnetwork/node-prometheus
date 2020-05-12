@@ -4,7 +4,7 @@ Monitor your Heimdall, Bor and Virtual machine node with Prometheus and Grafana
 
 ## Follow below steps to set up monitoring for you Matic Node
 
-**Pre-Requesites**: You need to make sure that you Matic Node is setup, including Heimdall and Bor nodes. 
+**Pre-Requesite**: You need to make sure that you Matic Node is setup, including Heimdall and Bor nodes. 
 
 **Step 1:**
 
@@ -45,7 +45,7 @@ To edit the service file you can run the following command:
 
 `sudo nano /etc/systemd/system/bor.service`
 
-Now in this you would see `ExecStart=/bin/bash` with multiple paramaters in line to it. You will need to search for `--maxpeers 150`. Take your cursor to this paramater and then add this, `--metrics --pprof --pprofport 7071 --pprofaddr 0.0.0.0`
+Now in this you would see `ExecStart=/bin/bash` with multiple paramaters in line to it. Add this, `--metrics --pprof --pprofport 7071 --pprofaddr 0.0.0.0` to this line of paramaters. You can add it anywhere, for example, you can add it after `--maxpeers 150`
 
 You need to make sure that the spaces and formatting are intact.
 
