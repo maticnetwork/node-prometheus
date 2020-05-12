@@ -83,7 +83,7 @@ Once Docker is installed then you run docker by running the following command to
 
 **Step 5:**
 
-Open Prometheus at following URL:
+Open Grafana at following URL:
 
 ```
 http://host_ip:3000
