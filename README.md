@@ -89,7 +89,7 @@ Open Grafana at following URL:
 http://host_ip:3000
 ```
 
-**Note**: For folks that don't want to create a Proxy Tunnel you will need to open the Ports of 3000 and 9090 on your cloud firewall.
+**Note**: Ports of 3000 and 9090 need to open on your cloud firewall.
 
 **Creating a Proxy Tunnel**
 
