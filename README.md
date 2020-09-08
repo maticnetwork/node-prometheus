@@ -54,12 +54,12 @@ You will need to run this as `sudo systemctl daemon-reload`. Once this is succes
 
 To Restart Bor service:
 
-**Bor Start**: `sudo service bor start`
+`sudo service bor start`
 
 
 **Step 4:**
 
-Clone the Prometheus repository to your local machine
+Clone the Prometheus repository to your remote machine
 
 `git clone https://github.com/maticnetwork/node-prometheus.git`
 
@@ -70,6 +70,14 @@ Then install Docker by running the following command:
 `sudo apt install docker-compose`
 
 Once Docker is installed then you run docker by running the following command to start Prometheus: `docker-compose up -d`
+
+Note: If you're getting an error after running `docker-compose up -d` please run the following commands on your remote machine
+
+`sudo usermod -aG docker ubuntu`
+
+`newgrp docker`
+
+And then you can run `docker-compose up -d` again.
 
 **Step 5:**
 
@@ -116,7 +124,7 @@ Grafana uses web based APIs to connect to prometheus server for indexed data. Fo
      ![Screenshot 2020-04-03 at 4 50 14 PM](https://user-images.githubusercontent.com/31979627/78356289-e856c400-75cc-11ea-86da-e94d742a07f7.png)
 
 
-3. Change the HTTP url to http://host_ip:9090 and save. After the success message, go to Grafana home:
+3. Change the HTTP url to http://host_ip:9090 and save. Make sure `9090` port is open. Click on `Save and Test` button to chek if the connection is a success. After the success message, go to Grafana home:
 
 
      ![Screenshot 2020-04-03 at 5 14 53 PM](https://user-images.githubusercontent.com/31979627/78357564-4dabb480-75cf-11ea-9c9c-f6e8daadec47.png)
