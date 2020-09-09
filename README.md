@@ -38,7 +38,14 @@ You will make changes in the Bor service file. To access the `bor.service` file 
 
 There would be multiple entries. By default the following parameters should be automatically added, but if they're not added then you can the parameters from below.
 
-Now in this you would see `ExecStart=/bin/bash` with multiple paramaters in line to it. Add this, `--metrics --pprof --pprofport 7071 --pprofaddr 0.0.0.0` to this line of paramaters. You can add it anywhere, for example, you can add it after `--maxpeers 150`
+Now in this you would see multiple paramaters in a list format. Add this in the following format. You can add it anywhere, for example, you can add it after `--maxpeers 150`
+
+```js
+--metrics \
+--pprof --pprofport 7071 --pprofaddr `0.0.0.0` \
+``` 
+
+Note that these parameters should already be added as part of your setup. You only need to add these parameters if they're not already present in the `start.sh` file. 
 
 You need to make sure that the spaces and formatting are intact.
 
