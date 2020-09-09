@@ -8,44 +8,44 @@ Monitor your Heimdall, Bor and Virtual machine node with Prometheus and Grafana
 
 **Step 1:**
 
+By default these changes should have already been made as part of your node setup but incase they're not, you can follow the steps below
+
 You will need to change `prometheus` flag to `true` in the `config.toml`. 
 
 To access the config.toml here:
 
-**Linux Packages**: `sudo vi /etc/heimdall/config/config.toml`
-**Binaries**: `vi ~/.heimdalld/config/config.toml`
-
-By default the prometheus flag is set to `false`.
+`vi ~/.heimdalld/config/config.toml`
 
 Make sure that you keep the formatting intact.
 
 **Step 2:**
 
-Once you have made the changes in the `config.toml` you will need to stop Heimdall service and restart it.
+Once you have made the changes in the `config.toml` you will need to stop Heimdall service and restart it. Note that you only need to restart Heimdall service if you have made changes to it.
 
 To stop heimdall service:
 
-**Linux Packages**: `sudo service heimdalld stop`
-**Binaries**: `pkill heimdalld`
+`sudo service heimdalld stop`
 
 To restart heimdall service:
 
-**Linux Packages**: `sudo service heimdalld start`
-**Binaries**: `heimdalld start`
+`sudo service heimdalld start`
 
 **Step 3:**
 
 You will make changes in the Bor service file. To access the `bor.service` file you can run this command:
 
-`locate bor.service`
+`nano /home/ubuntu/node/bor/start.sh`
 
-There would be multiple entries. You will need to edit the file in this system path: `/etc/systemd/system/bor.service`
+There would be multiple entries. By default the following parameters should be automatically added, but if they're not added then you can the parameters from below.
 
-To edit the service file you can run the following command:
+Now in this you would see multiple paramaters in a list format. Add this in the following format. You can add it anywhere, for example, you can add it after `--maxpeers 150`
 
-`sudo nano /etc/systemd/system/bor.service`
+```js
+--metrics \
+--pprof --pprofport 7071 --pprofaddr '0.0.0.0' \
+``` 
 
-Now in this you would see `ExecStart=/bin/bash` with multiple paramaters in line to it. Add this, `--metrics --pprof --pprofport 7071 --pprofaddr 0.0.0.0` to this line of paramaters. You can add it anywhere, for example, you can add it after `--maxpeers 150`
+Note that these parameters should already be added as part of your setup. You only need to add these parameters if they're not already present in the `start.sh` file. 
 
 You need to make sure that the spaces and formatting are intact.
 
@@ -53,8 +53,7 @@ Now you will notice that your bor will stop because we made changes to the servi
 
 To Stop Bor service:
 
-**Linux Packages**: `sudo service bor stop`
-**Binaries**: `pkill bor`
+`sudo service bor stop`
 
 Note: When you stop the service of Bor you may encounter a warning asking you run `systemctl daemon-reload` to reload units.
 
@@ -62,14 +61,12 @@ You will need to run this as `sudo systemctl daemon-reload`. Once this is succes
 
 To Restart Bor service:
 
-**Linux Packages**: `sudo service bor start`
-**Binaries**: `bash start.sh <Your Ethereum wallet address>`
+`sudo service bor start`
 
-Note: You will need to use the same Address that you used when you had initially set up your node.
 
 **Step 4:**
 
-Clone the Prometheus repository to your local machine
+Clone the Prometheus repository to your remote machine
 
 `git clone https://github.com/maticnetwork/node-prometheus.git`
 
@@ -80,6 +77,14 @@ Then install Docker by running the following command:
 `sudo apt install docker-compose`
 
 Once Docker is installed then you run docker by running the following command to start Prometheus: `sudo docker-compose up -d`
+
+Note: If you're getting an error after running `docker-compose up -d` please run the following commands on your remote machine
+
+`sudo usermod -aG docker ubuntu`
+
+`newgrp docker`
+
+And then you can run `docker-compose up -d` again.
 
 **Step 5:**
 
@@ -128,7 +133,7 @@ Grafana uses web based APIs to connect to prometheus server for indexed data. Fo
      ![Screenshot 2020-04-03 at 4 50 14 PM](https://user-images.githubusercontent.com/31979627/78356289-e856c400-75cc-11ea-86da-e94d742a07f7.png)
 
 
-3. Change the HTTP url to http://host_ip:9090 and save. After the success message, go to Grafana home:
+3. Change the HTTP url to http://host_ip:9090 and save. Make sure `9090` port is open. Click on `Save and Test` button to chek if the connection is a success. After the success message, go to Grafana home:
 
 
      ![Screenshot 2020-04-03 at 5 14 53 PM](https://user-images.githubusercontent.com/31979627/78357564-4dabb480-75cf-11ea-9c9c-f6e8daadec47.png)
@@ -151,4 +156,3 @@ Grafana uses web based APIs to connect to prometheus server for indexed data. Fo
 
      ![Screenshot 2020-04-07 at 1 23 18 PM](https://user-images.githubusercontent.com/31979627/78644461-89969080-78d3-11ea-9123-8587653c9d9a.png)
      
-
