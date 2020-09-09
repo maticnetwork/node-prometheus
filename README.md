@@ -79,7 +79,7 @@ Then install Docker by running the following command:
 
 `sudo apt install docker-compose`
 
-Once Docker is installed then you run docker by running the following command to start Prometheus: `docker-compose up -d`
+Once Docker is installed then you run docker by running the following command to start Prometheus: `sudo docker-compose up -d`
 
 **Step 5:**
 
@@ -88,6 +88,8 @@ Open Grafana at following URL:
 ```
 http://host_ip:3000
 ```
+
+**Note**: Ports of 3000 and 9090 need to open on your cloud firewall.
 
 **Creating a Proxy Tunnel**
 
