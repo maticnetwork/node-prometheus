@@ -42,7 +42,7 @@ Now in this you would see multiple paramaters in a list format. Add this in the 
 
 ```js
 --metrics \
---pprof --pprofport 7071 --pprofaddr `0.0.0.0` \
+--pprof --pprofport 7071 --pprofaddr '0.0.0.0' \
 ``` 
 
 Note that these parameters should already be added as part of your setup. You only need to add these parameters if they're not already present in the `start.sh` file. 
@@ -154,4 +154,3 @@ Grafana uses web based APIs to connect to prometheus server for indexed data. Fo
 
      ![Screenshot 2020-04-07 at 1 23 18 PM](https://user-images.githubusercontent.com/31979627/78644461-89969080-78d3-11ea-9123-8587653c9d9a.png)
      
-
