@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
-  "iteration": 1586179981368,
+  "id": 4,
+  "iteration": 1622416966127,
   "links": [],
   "panels": [
     {
@@ -38,7 +38,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -65,9 +71,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -77,22 +84,28 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "system_cpu_sysload",
+          "exemplar": true,
+          "expr": "system_cpu_sysload{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "system",
           "refId": "A"
         },
         {
-          "expr": "system_cpu_syswait",
+          "exemplar": true,
+          "expr": "system_cpu_syswait{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "iowait",
           "refId": "B"
         },
         {
-          "expr": "system_cpu_procload",
+          "exemplar": true,
+          "expr": "system_cpu_procload{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "geth",
           "refId": "C"
@@ -144,7 +157,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -171,9 +190,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -183,22 +203,28 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(system_memory_allocs[1m])",
+          "exemplar": true,
+          "expr": "rate(system_memory_allocs{job=\"bor\"}[1m])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "alloc",
           "refId": "A"
         },
         {
-          "expr": "system_memory_used",
+          "exemplar": true,
+          "expr": "system_memory_used{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "used",
           "refId": "B"
         },
         {
-          "expr": "system_memory_held",
+          "exemplar": true,
+          "expr": "system_memory_held{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "held",
           "refId": "C"
@@ -250,7 +276,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -277,9 +309,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -363,7 +396,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -390,9 +429,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -402,15 +442,19 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(p2p_ingress[1m])",
+          "exemplar": true,
+          "expr": "rate(p2p_ingress{job=\"bor\"}[1m])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "ingress",
           "refId": "B"
         },
         {
-          "expr": "rate(p2p_egress[1m])",
+          "exemplar": true,
+          "expr": "rate(p2p_egress{job=\"bor\"}[1m])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "egress",
           "refId": "C"
@@ -462,7 +506,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -489,9 +539,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -501,22 +552,28 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "p2p_peers",
+          "exemplar": true,
+          "expr": "p2p_peers{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "peers",
           "refId": "A"
         },
         {
-          "expr": "rate(p2p_dials[1m])",
+          "exemplar": true,
+          "expr": "rate(p2p_dials{job=\"bor\"}[1m])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "dials",
           "refId": "B"
         },
         {
-          "expr": "rate(p2p_serves[1m])",
+          "exemplar": true,
+          "expr": "rate(p2p_serves{job=\"bor\"}[1m])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "serves",
           "refId": "C"
@@ -587,6 +644,10 @@
         "#d44a3a"
       ],
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -638,9 +699,12 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "chain_head_header",
+          "exemplar": true,
+          "expr": "chain_head_header{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
+          "legendFormat": "",
           "refId": "A"
         }
       ],
@@ -666,6 +730,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -690,9 +760,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -702,22 +773,28 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "chain_head_header",
+          "exemplar": true,
+          "expr": "chain_head_header{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "header",
           "refId": "A"
         },
         {
-          "expr": "chain_head_receipt",
+          "exemplar": true,
+          "expr": "chain_head_receipt{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "receipt",
           "refId": "B"
         },
         {
-          "expr": "chain_head_block",
+          "exemplar": true,
+          "expr": "chain_head_block{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "block",
           "refId": "C"
@@ -774,6 +851,10 @@
         "#d44a3a"
       ],
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -825,9 +906,12 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "txpool_pending",
+          "exemplar": true,
+          "expr": "txpool_pending{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
+          "legendFormat": "",
           "refId": "A"
         }
       ],
@@ -853,6 +937,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -877,9 +967,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -889,22 +980,28 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "txpool_pending",
+          "exemplar": true,
+          "expr": "txpool_pending{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "executable",
           "refId": "A"
         },
         {
-          "expr": "txpool_queued",
+          "exemplar": true,
+          "expr": "txpool_queued{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "gapped",
           "refId": "B"
         },
         {
-          "expr": "txpool_local",
+          "exemplar": true,
+          "expr": "txpool_local{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "local",
           "refId": "C"
@@ -961,6 +1058,10 @@
         "#d44a3a"
       ],
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1012,9 +1113,12 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "chain_head_receipt",
+          "exemplar": true,
+          "expr": "chain_head_receipt{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
+          "legendFormat": "",
           "refId": "A"
         }
       ],
@@ -1043,6 +1147,10 @@
         "#d44a3a"
       ],
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1094,9 +1202,12 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "txpool_queued",
+          "exemplar": true,
+          "expr": "txpool_queued{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
+          "legendFormat": "",
           "refId": "A"
         }
       ],
@@ -1125,6 +1236,10 @@
         "#d44a3a"
       ],
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1176,9 +1291,12 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "chain_head_block",
+          "exemplar": true,
+          "expr": "chain_head_block{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
+          "legendFormat": "",
           "refId": "A"
         }
       ],
@@ -1207,6 +1325,10 @@
         "#d44a3a"
       ],
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -1258,9 +1380,12 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "txpool_local",
+          "exemplar": true,
+          "expr": "txpool_local{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
+          "legendFormat": "",
           "refId": "A"
         }
       ],
@@ -1286,6 +1411,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1312,9 +1443,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1324,14 +1456,17 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "chain_execution{quantile=\"$quantile\"}",
+          "exemplar": true,
+          "expr": "chain_execution{quantile=\"$quantile\",job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "execution (q=$quantile)",
           "refId": "A"
         },
         {
-          "expr": "chain_validation{quantile=\"$quantile\"}",
+          "exemplar": true,
+          "expr": "chain_validation{quantile=\"$quantile\",job=\"bor\"}",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1340,65 +1475,83 @@
           "refId": "B"
         },
         {
-          "expr": "chain_write{quantile=\"$quantile\"}",
+          "exemplar": true,
+          "expr": "chain_write{quantile=\"$quantile\",job=\"bor\"}",
           "format": "time_series",
           "hide": false,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "commit (q=$quantile)",
           "refId": "C"
         },
         {
-          "expr": "chain_account_reads{quantile=\"$quantile\"}",
+          "exemplar": true,
+          "expr": "chain_account_reads{quantile=\"$quantile\",job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "account read (q=$quantile)",
           "refId": "D"
         },
         {
-          "expr": "chain_account_updates{quantile=\"$quantile\"}",
+          "exemplar": true,
+          "expr": "chain_account_updates{quantile=\"$quantile\",job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "account update (q=$quantile)",
           "refId": "E"
         },
         {
-          "expr": "chain_account_hashes{quantile=\"$quantile\"}",
+          "exemplar": true,
+          "expr": "chain_account_hashes{quantile=\"$quantile\",job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "account hashe (q=$quantile)",
           "refId": "F"
         },
         {
-          "expr": "chain_account_commits{quantile=\"$quantile\"}",
+          "exemplar": true,
+          "expr": "chain_account_commits{quantile=\"$quantile\",job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "account commit (q=$quantile)",
           "refId": "G"
         },
         {
-          "expr": "chain_storage_reads{quantile=\"$quantile\"}",
+          "exemplar": true,
+          "expr": "chain_storage_reads{quantile=\"$quantile\",job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "storage read (q=$quantile)",
           "refId": "H"
         },
         {
-          "expr": "chain_storage_updates{quantile=\"$quantile\"}",
+          "exemplar": true,
+          "expr": "chain_storage_updates{quantile=\"$quantile\",job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "storage update (q=$quantile)",
           "refId": "I"
         },
         {
-          "expr": "chain_storage_hashes{quantile=\"$quantile\"}",
+          "exemplar": true,
+          "expr": "chain_storage_hashes{quantile=\"$quantile\",job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "storage hashe (q=$quantile)",
           "refId": "J"
         },
         {
-          "expr": "chain_storage_commits{quantile=\"$quantile\"}",
+          "exemplar": true,
+          "expr": "chain_storage_commits{quantile=\"$quantile\",job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "storage commit (q=$quantile)",
           "refId": "K"
@@ -1452,6 +1605,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1478,9 +1637,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 2,
       "points": false,
       "renderer": "flot",
@@ -1490,21 +1650,26 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(txpool_valid[1m])",
+          "exemplar": true,
+          "expr": "rate(txpool_valid{job=\"bor\"}[1m])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "valid",
           "refId": "K"
         },
         {
-          "expr": "rate(txpool_invalid[1m])",
+          "exemplar": true,
+          "expr": "rate(txpool_invalid{job=\"bor\"}[1m])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "invalid",
           "refId": "A"
         },
         {
-          "expr": "rate(txpool_underpriced[1m])",
+          "exemplar": true,
+          "expr": "rate(txpool_underpriced{job=\"bor\"}[1m])",
           "format": "time_series",
           "hide": false,
           "interval": "",
@@ -1513,62 +1678,78 @@
           "refId": "B"
         },
         {
-          "expr": "rate(txpool_pending_discard[1m])",
+          "exemplar": true,
+          "expr": "rate(txpool_pending_discard{job=\"bor\"}[1m])",
           "format": "time_series",
           "hide": false,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "executable discard",
           "refId": "C"
         },
         {
-          "expr": "rate(txpool_pending_replace[1m])",
+          "exemplar": true,
+          "expr": "rate(txpool_pending_replace{job=\"bor\"}[1m])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "executable replace",
           "refId": "D"
         },
         {
-          "expr": "rate(txpool_pending_ratelimit[1m])",
+          "exemplar": true,
+          "expr": "rate(txpool_pending_ratelimit{job=\"bor\"}[1m])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "executable ratelimit",
           "refId": "E"
         },
         {
-          "expr": "rate(txpool_pending_nofunds[1m])",
+          "exemplar": true,
+          "expr": "rate(txpool_pending_nofunds{job=\"bor\"}[1m])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "executable nofunds",
           "refId": "F"
         },
         {
-          "expr": "rate(txpool_queued_discard[1m])",
+          "exemplar": true,
+          "expr": "rate(txpool_queued_discard{job=\"bor\"}[1m])",
           "format": "time_series",
           "hide": false,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "gapped discard",
           "refId": "G"
         },
         {
-          "expr": "rate(txpool_queued_replace[1m])",
+          "exemplar": true,
+          "expr": "rate(txpool_queued_replace{job=\"bor\"}[1m])",
           "format": "time_series",
           "hide": false,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "gapped replace",
           "refId": "H"
         },
         {
-          "expr": "rate(txpool_queued_ratelimit[1m])",
+          "exemplar": true,
+          "expr": "rate(txpool_queued_ratelimit{job=\"bor\"}[1m])",
           "format": "time_series",
           "hide": false,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "gapped ratelimit",
           "refId": "I"
         },
         {
-          "expr": "rate(txpool_queued_nofunds[1m])",
+          "exemplar": true,
+          "expr": "rate(txpool_queued_nofunds{job=\"bor\"}[1m])",
           "format": "time_series",
           "hide": false,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "gapped nofunds",
           "refId": "J"
@@ -1634,7 +1815,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1659,9 +1846,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1671,29 +1859,37 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(eth_db_chaindata_disk_read[1m])",
+          "exemplar": true,
+          "expr": "rate(eth_db_chaindata_disk_read{job=\"bor\"}[1m])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "leveldb read",
           "refId": "B"
         },
         {
-          "expr": "rate(eth_db_chaindata_disk_write[1m])",
+          "exemplar": true,
+          "expr": "rate(eth_db_chaindata_disk_write{job=\"bor\"}[1m])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "leveldb write",
           "refId": "A"
         },
         {
-          "expr": "rate(eth_db_chaindata_ancient_read[1m])",
+          "exemplar": true,
+          "expr": "rate(eth_db_chaindata_ancient_read{job=\"bor\"}[1m])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "ancient read",
           "refId": "C"
         },
         {
-          "expr": "rate(eth_db_chaindata_ancient_write[1m])",
+          "exemplar": true,
+          "expr": "rate(eth_db_chaindata_ancient_write{job=\"bor\"}[1m])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "ancient write",
           "refId": "D"
@@ -1745,7 +1941,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1770,9 +1972,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1782,29 +1985,37 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "eth_db_chaindata_disk_read",
+          "exemplar": true,
+          "expr": "eth_db_chaindata_disk_read{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "leveldb read",
           "refId": "B"
         },
         {
-          "expr": "eth_db_chaindata_disk_write",
+          "exemplar": true,
+          "expr": "eth_db_chaindata_disk_write{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "leveldb write",
           "refId": "A"
         },
         {
-          "expr": "eth_db_chaindata_ancient_read",
+          "exemplar": true,
+          "expr": "eth_db_chaindata_ancient_read{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "ancient read",
           "refId": "C"
         },
         {
-          "expr": "eth_db_chaindata_ancient_write",
+          "exemplar": true,
+          "expr": "eth_db_chaindata_ancient_write{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "ancient write",
           "refId": "D"
@@ -1856,7 +2067,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1883,9 +2100,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1895,15 +2113,19 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "eth_db_chaindata_disk_size",
+          "exemplar": true,
+          "expr": "eth_db_chaindata_disk_size{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "leveldb",
           "refId": "B"
         },
         {
-          "expr": "eth_db_chaindata_ancient_size",
+          "exemplar": true,
+          "expr": "eth_db_chaindata_ancient_size{job=\"bor\"}",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "ancient",
           "refId": "A"
@@ -1969,7 +2191,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1994,9 +2222,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2006,17 +2235,21 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(trie_memcache_clean_read[1m])",
+          "exemplar": true,
+          "expr": "rate(trie_memcache_clean_read{job=\"bor\"}[1m])",
           "format": "time_series",
           "hide": false,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "hit",
           "refId": "C"
         },
         {
-          "expr": "rate(trie_memcache_clean_write[1m])",
+          "exemplar": true,
+          "expr": "rate(trie_memcache_clean_write{job=\"bor\"}[1m])",
           "format": "time_series",
           "hide": false,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "miss",
           "refId": "B"
@@ -2068,7 +2301,13 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prometheus",
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2093,9 +2332,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2105,24 +2345,30 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "rate(trie_memcache_gc_size[1m])",
+          "exemplar": true,
+          "expr": "rate(trie_memcache_gc_size{job=\"bor\"}[1m])",
           "format": "time_series",
           "hide": false,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "gc",
           "refId": "C"
         },
         {
-          "expr": "rate(trie_memcache_flush_size[1m])",
+          "exemplar": true,
+          "expr": "rate(trie_memcache_flush_size{job=\"bor\"}[1m])",
           "format": "time_series",
           "hide": false,
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "overflow",
           "refId": "B"
         },
         {
-          "expr": "rate(trie_memcache_commit_size[1m])",
+          "exemplar": true,
+          "expr": "rate(trie_memcache_commit_size{job=\"bor\"}[1m])",
           "format": "time_series",
+          "interval": "",
           "intervalFactor": 1,
           "legendFormat": "commit",
           "refId": "A"
@@ -2171,7 +2417,7 @@
     }
   ],
   "refresh": "10s",
-  "schemaVersion": 22,
+  "schemaVersion": 27,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -2183,16 +2429,20 @@
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "prometheus",
+        "datasource": null,
         "definition": "{job=\"geth\"}",
+        "description": null,
+        "error": null,
         "hide": 2,
         "includeAll": true,
-        "index": -1,
         "label": "TxPoolCounters",
         "multi": true,
         "name": "tx_pool_counters",
         "options": [],
-        "query": "{job=\"geth\"}",
+        "query": {
+          "query": "{job=\"geth\"}",
+          "refId": "StandardVariableQuery"
+        },
         "refresh": 2,
         "regex": "/.*(txpool.*){.*?\".*/",
         "skipUrlSync": false,
@@ -2210,6 +2460,8 @@
           "text": "geth",
           "value": "geth"
         },
+        "description": null,
+        "error": null,
         "hide": 2,
         "includeAll": false,
         "label": null,
@@ -2233,6 +2485,8 @@
           "text": "0.95",
           "value": "0.95"
         },
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": null,
@@ -2277,7 +2531,7 @@
     ]
   },
   "time": {
-    "from": "now-30m",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -2307,9 +2561,6 @@
   },
   "timezone": "",
   "title": "Bor-Dashboard",
-  "uid": "FPpjH6Hik",
-  "variables": {
-    "list": []
-  },
-  "version": 27
+  "uid": "bordashboard-1",
+  "version": 12
 }
