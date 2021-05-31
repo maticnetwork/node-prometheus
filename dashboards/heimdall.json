@@ -16,8 +16,8 @@
   "editable": true,
   "gnetId": 11036,
   "graphTooltip": 0,
-  "id": null,
-  "iteration": 1583898053711,
+  "id": 5,
+  "iteration": 1622425158126,
   "links": [],
   "panels": [
     {
@@ -35,8 +35,11 @@
       "type": "row"
     },
     {
-      "content": "<img width=\"160px\" src=\"https://raw.githubusercontent.com/zhangyelong/cosmos-dashboard/master/logo/$chain_id.png\" />",
       "datasource": "prometheus",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "gridPos": {
         "h": 2,
         "w": 24,
@@ -45,9 +48,11 @@
       },
       "id": 62,
       "links": [],
-      "mode": "html",
-      "options": {},
-      "title": "",
+      "options": {
+        "content": "<img width=\"160px\" src=\"https://raw.githubusercontent.com/zhangyelong/cosmos-dashboard/master/logo/$chain_id.png\" />",
+        "mode": "html"
+      },
+      "pluginVersion": "7.5.5",
       "transparent": true,
       "type": "text"
     },
@@ -63,6 +68,10 @@
       "datasource": "$DS",
       "decimals": 0,
       "description": "",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "format": "locale",
       "gauge": {
         "maxValue": 100,
@@ -95,7 +104,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "100%",
       "prefix": "",
@@ -146,6 +154,10 @@
       "datasource": "$DS",
       "decimals": 0,
       "description": "",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "format": "locale",
       "gauge": {
         "maxValue": 100,
@@ -178,7 +190,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "80%",
       "prefix": "",
@@ -228,6 +239,10 @@
       "datasource": "$DS",
       "decimals": 2,
       "description": "",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "format": "s",
       "gauge": {
         "maxValue": 100,
@@ -260,7 +275,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "120%",
       "prefix": "",
@@ -310,6 +324,10 @@
       "datasource": "$DS",
       "decimals": 0,
       "description": "",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "format": "short",
       "gauge": {
         "maxValue": 100,
@@ -342,7 +360,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "80%",
       "prefix": "",
@@ -390,6 +407,12 @@
       "dashes": false,
       "datasource": "$DS",
       "decimals": 0,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 3,
       "fillGradient": 0,
       "gridPos": {
@@ -418,9 +441,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -505,6 +529,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "$DS",
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 3,
       "fillGradient": 0,
       "gridPos": {
@@ -533,9 +563,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -620,6 +651,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "$DS",
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 3,
       "fillGradient": 0,
       "gridPos": {
@@ -647,9 +684,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -720,6 +758,12 @@
       "dashes": false,
       "datasource": "$DS",
       "decimals": 0,
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 3,
       "fillGradient": 0,
       "gridPos": {
@@ -747,9 +791,10 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -825,8 +870,8 @@
       "scopedVars": {
         "instance": {
           "selected": true,
-          "text": "10.0.0.78:26660",
-          "value": "10.0.0.78:26660"
+          "text": "127.0.0.1:26660",
+          "value": "127.0.0.1:26660"
         }
       },
       "title": "instance overview: $instance",
@@ -836,6 +881,36 @@
       "cacheTimeout": null,
       "datasource": "$DS",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "max": 20,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#e24d42",
+                "value": null
+              },
+              {
+                "color": "#ef843c",
+                "value": 2
+              },
+              {
+                "color": "#7eb26d",
+                "value": 5
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 4,
         "w": 6,
@@ -846,60 +921,35 @@
       "id": 53,
       "links": [],
       "options": {
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "last"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "decimals": 0,
-            "mappings": [],
-            "max": 20,
-            "min": 0,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "#e24d42",
-                  "value": null
-                },
-                {
-                  "color": "#ef843c",
-                  "value": 2
-                },
-                {
-                  "color": "#7eb26d",
-                  "value": 5
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showThresholdLabels": false,
-        "showThresholdMarkers": true
+        "showThresholdMarkers": true,
+        "text": {}
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "scopedVars": {
         "instance": {
           "selected": true,
-          "text": "10.0.0.78:26660",
-          "value": "10.0.0.78:26660"
+          "text": "127.0.0.1:26660",
+          "value": "127.0.0.1:26660"
         }
       },
       "targets": [
         {
+          "exemplar": true,
           "expr": "tendermint_p2p_peers{chain_id=\"$chain_id\", instance=~\"$instance\"}",
           "format": "time_series",
           "instant": true,
           "interval": "30s",
           "intervalFactor": 1,
+          "legendFormat": "",
           "refId": "A"
         }
       ],
@@ -912,6 +962,36 @@
       "cacheTimeout": null,
       "datasource": "$DS",
       "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "max": 50,
+          "min": null,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#7eb26d",
+                "value": null
+              },
+              {
+                "color": "#ef843c",
+                "value": 10
+              },
+              {
+                "color": "#e24d42",
+                "value": 20
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 4,
         "w": 6,
@@ -922,60 +1002,35 @@
       "id": 56,
       "links": [],
       "options": {
-        "fieldOptions": {
+        "orientation": "horizontal",
+        "reduceOptions": {
           "calcs": [
             "last"
           ],
-          "defaults": {
-            "color": {
-              "mode": "thresholds"
-            },
-            "decimals": 0,
-            "mappings": [],
-            "max": 50,
-            "min": null,
-            "nullValueMode": "connected",
-            "thresholds": {
-              "mode": "absolute",
-              "steps": [
-                {
-                  "color": "#7eb26d",
-                  "value": null
-                },
-                {
-                  "color": "#ef843c",
-                  "value": 10
-                },
-                {
-                  "color": "#e24d42",
-                  "value": 20
-                }
-              ]
-            },
-            "unit": "short"
-          },
-          "overrides": [],
+          "fields": "",
           "values": false
         },
-        "orientation": "horizontal",
         "showThresholdLabels": false,
-        "showThresholdMarkers": true
+        "showThresholdMarkers": true,
+        "text": {}
       },
-      "pluginVersion": "6.6.2",
+      "pluginVersion": "7.5.5",
       "scopedVars": {
         "instance": {
           "selected": true,
-          "text": "10.0.0.78:26660",
-          "value": "10.0.0.78:26660"
+          "text": "127.0.0.1:26660",
+          "value": "127.0.0.1:26660"
         }
       },
       "targets": [
         {
+          "exemplar": true,
           "expr": "tendermint_mempool_size{chain_id=\"$chain_id\", instance=~\"$instance\"}",
           "format": "time_series",
           "instant": true,
           "interval": "30s",
           "intervalFactor": 1,
+          "legendFormat": "",
           "refId": "A"
         }
       ],
@@ -997,6 +1052,10 @@
       "datasource": "$DS",
       "decimals": 0,
       "description": "",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "format": "short",
       "gauge": {
         "maxValue": null,
@@ -1029,7 +1088,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "80%",
       "prefix": "",
@@ -1038,8 +1096,8 @@
       "scopedVars": {
         "instance": {
           "selected": true,
-          "text": "10.0.0.78:26660",
-          "value": "10.0.0.78:26660"
+          "text": "127.0.0.1:26660",
+          "value": "127.0.0.1:26660"
         }
       },
       "sparkline": {
@@ -1081,6 +1139,10 @@
       "datasource": "$DS",
       "decimals": 0,
       "description": "",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
       "format": "locale",
       "gauge": {
         "maxValue": null,
@@ -1113,7 +1175,6 @@
       "maxDataPoints": 100,
       "nullPointMode": "connected",
       "nullText": null,
-      "options": {},
       "postfix": "",
       "postfixFontSize": "80%",
       "prefix": "",
@@ -1128,8 +1189,8 @@
       "scopedVars": {
         "instance": {
           "selected": true,
-          "text": "10.0.0.78:26660",
-          "value": "10.0.0.78:26660"
+          "text": "127.0.0.1:26660",
+          "value": "127.0.0.1:26660"
         }
       },
       "sparkline": {
@@ -1164,6 +1225,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "$DS",
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1189,18 +1256,18 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "6.4.3",
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "scopedVars": {
         "instance": {
           "selected": true,
-          "text": "10.0.0.78:26660",
-          "value": "10.0.0.78:26660"
+          "text": "127.0.0.1:26660",
+          "value": "127.0.0.1:26660"
         }
       },
       "seriesOverrides": [],
@@ -1265,6 +1332,12 @@
       "dashLength": 10,
       "dashes": false,
       "datasource": "$DS",
+      "fieldConfig": {
+        "defaults": {
+          "links": []
+        },
+        "overrides": []
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1290,17 +1363,18 @@
       "links": [],
       "nullPointMode": "null",
       "options": {
-        "dataLinks": []
+        "alertThreshold": true
       },
       "percentage": false,
+      "pluginVersion": "7.5.5",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
       "scopedVars": {
         "instance": {
           "selected": true,
-          "text": "10.0.0.78:26660",
-          "value": "10.0.0.78:26660"
+          "text": "127.0.0.1:26660",
+          "value": "127.0.0.1:26660"
         }
       },
       "seriesOverrides": [],
@@ -1361,7 +1435,7 @@
     }
   ],
   "refresh": "10s",
-  "schemaVersion": 22,
+  "schemaVersion": 27,
   "style": "dark",
   "tags": [
     "Blockchain",
@@ -1371,9 +1445,12 @@
     "list": [
       {
         "current": {
-          "text": "prometheus",
-          "value": "prometheus"
+          "selected": false,
+          "text": "Prometheus",
+          "value": "Prometheus"
         },
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "Datasource",
@@ -1389,18 +1466,24 @@
       {
         "allValue": null,
         "current": {
-          "text": "heimdall-uGeY9H",
-          "value": "heimdall-uGeY9H"
+          "selected": false,
+          "text": "heimdall-137",
+          "value": "heimdall-137"
         },
         "datasource": "$DS",
-        "definition": "label_values(tendermint_consensus_height, chain_id)",
+        "definition": "label_values(tendermint_p2p_peers, chain_id)",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "Chain ID",
         "multi": false,
         "name": "chain_id",
         "options": [],
-        "query": "label_values(tendermint_consensus_height, chain_id)",
+        "query": {
+          "query": "label_values(tendermint_p2p_peers, chain_id)",
+          "refId": "StandardVariableQuery"
+        },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1414,18 +1497,24 @@
       {
         "allValue": "",
         "current": {
-          "text": "10.0.0.78:26660",
-          "value": "10.0.0.78:26660"
+          "selected": false,
+          "text": "127.0.0.1:26660",
+          "value": "127.0.0.1:26660"
         },
         "datasource": "$DS",
-        "definition": "label_values(tendermint_consensus_height{chain_id=\"$chain_id\"}, instance)",
+        "definition": "label_values(tendermint_p2p_peers{chain_id=\"$chain_id\"}, instance)",
+        "description": null,
+        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "Instance",
         "multi": false,
         "name": "instance",
         "options": [],
-        "query": "label_values(tendermint_consensus_height{chain_id=\"$chain_id\"}, instance)",
+        "query": {
+          "query": "label_values(tendermint_p2p_peers{chain_id=\"$chain_id\"}, instance)",
+          "refId": "StandardVariableQuery"
+        },
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1460,6 +1549,6 @@
   },
   "timezone": "",
   "title": "Heimdall-Dashboard",
-  "uid": "UJyurCT123",
-  "version": 1
- }
+  "uid": "UJyurCT123asdf",
+  "version": 3
+}
